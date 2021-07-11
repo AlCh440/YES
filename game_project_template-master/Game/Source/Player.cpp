@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "App.h"
 #include "Textures.h"
+#include  "Render.h"
 
 bool Player::Awake(pugi::xml_node&)
 {
@@ -26,6 +27,7 @@ bool Player::Update(float dt)
 
 bool Player::PostUpdate()
 {
+    app->render->DrawTexture(sprite_sheet, 0, 0);
     return true;
 }
 
